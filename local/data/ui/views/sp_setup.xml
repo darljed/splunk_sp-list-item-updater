@@ -1,0 +1,47 @@
+<dashboard script="sp-list-item-updater:sp-update.js">
+  <label>SP Setup Instructions</label>
+  <row>
+    <html>
+      <h3>Setting up configuration</h3>
+      <p>Go to: <b>$SPLUNK_HOME/etc/apps/sp-list-item-updater/bin</b></p>
+      <p>Open File: <b>settings.py</b></p>
+      <p>Set credentials as needed. See sample setup below.</p>
+      <img src="/static/app/sp-list-item-updater/img/img1.png" alt="Sample Config" style="width:500px;"/>
+    </html>
+  </row>
+  <row>
+    <html>
+      <h3>Reference JS file</h3>
+      <p>Add reference of sp-update.js on your splunk dashboard or form</p>
+      <pre>&lt;dashboard script="<span class="color-a">sp-list-item-updater</span>:<span class="color-b">sp-update.js</span>"&gt;</pre>
+    </html>
+  </row>
+  <row>
+    <html>
+      <h3>Creating Update Button</h3>
+      <ul>
+        <li>Make sure to follow the attribute format and set the values properly.</li>
+        <li>Set the <span class="color-b">sp_button_trigger</span> on the button (or any element that you will be using)</li>
+      </ul>
+      <pre>
+&lt;button class="<span class="color-b">sp_button_trigger</span> btn btn-primary" <span class="color-a">data-config</span>="config1" <span class="color-a">data-field</span>="type" <span class="color-a">data-value</span>="sample content" <span class="color-a">data-id</span>="3"&gt;
+Update SP List
+&lt;/button&gt;
+      </pre>
+      <h4>Sample Button</h4>
+      <div class="form-cont">
+        <button class="sp_button_trigger btn btn-primary" data-config="config1" data-field="type" data-value="sample content" data-id="3">Update SP</button>
+      </div>
+<style>
+.color-a{
+  color: green;
+  font-weight: bold;
+}
+.color-b{
+  color: red;
+  font-weight: bold;
+}
+</style>
+    </html>
+  </row>
+</dashboard>
